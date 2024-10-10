@@ -3,13 +3,14 @@ import React, { Children, useState } from "react";
 
 import UserContext from "./userContext";
 
-const UserContextProvider = ()=>{
-    const [user , setUser] = useState(null);
+// eslint-disable-next-line react/prop-types
+const UserContextProvider = ({ children }) => {
+  const [user, setUser] = useState("");
 
-    return (
-            <UserContext.Provider value={{user , setUser}}>
-                {Children}
-            </UserContext.Provider>
-    )
-}
-export default UserContextProvider
+  return (
+    <UserContext.Provider value={{ user, setUser }}>
+      {children}
+    </UserContext.Provider>
+  );
+};
+export default UserContextProvider;
