@@ -1,14 +1,17 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
+import React, { useState , useContext} from 'react'
+import UserContext from '../context/userContext'
 
 const Login = () => {
 
     const [userName , setUserName] = useState('')
     const [password, setPassword] = useState('')
 
+    const {setUser} = useContext(UserContext);
+
     const handleSubmit = (e)=>{
         e.preventDefault()
-        alert(userName)
+        setUser({userName , password})
     }
   return (
     <div>
